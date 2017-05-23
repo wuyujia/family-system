@@ -1,6 +1,6 @@
 package org.rent.base;
 
-import com.bqmart.exception.ValidationException;
+import org.rent.exception.ValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;

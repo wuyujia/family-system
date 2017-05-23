@@ -1,7 +1,7 @@
 package org.rent.base;
 
-import com.bqmart.constant.ExceptionCode;
-import com.bqmart.exception.ValidationException;
+import org.rent.constant.ExceptionCode;
+import org.rent.exception.ValidationException;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 

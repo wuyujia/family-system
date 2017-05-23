@@ -32,7 +32,7 @@ public class Swagger2Config {
                 .build();
     }
 
-    @Bean
+//    @Bean
     public Docket restApiForJd() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
@@ -46,7 +46,7 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("京东贝全母婴商品对接系统API文档")
+                .title("家庭对账AA系统")
                 .contact(new Contact("吴雨佳", "", "wuyujia@beiquan.org"))
                 .version("2.0")
                 .build();

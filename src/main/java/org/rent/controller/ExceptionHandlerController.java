@@ -1,8 +1,8 @@
 package org.rent.controller;
 
-import com.bqmart.exception.BaseException;
-import com.bqmart.exception.ValidationException;
-import com.bqmart.utils.LinkedHashMapUtil;
+import org.rent.exception.BaseException;
+import org.rent.exception.ValidationException;
+import org.rent.utils.LinkedHashMapUtil;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

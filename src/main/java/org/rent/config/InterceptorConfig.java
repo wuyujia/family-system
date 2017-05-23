@@ -1,7 +1,7 @@
 package org.rent.config;
 
-import com.bqmart.interceptor.ResubmitInterceptorHandler;
-import com.bqmart.utils.RedisUtils;
+import org.rent.interceptor.ResubmitInterceptorHandler;
+import org.rent.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

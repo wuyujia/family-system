@@ -4,10 +4,9 @@ package org.rent.interceptor;
  * Created by wuyujia on 2017/4/17.
  */
 
-import com.bqmart.annotation.Resubmit;
-import com.bqmart.jd.exception.JdException;
-import com.bqmart.utils.RedisUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.rent.annotation.Resubmit;
+import org.rent.utils.RedisUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -56,7 +55,7 @@ public class ResubmitInterceptorHandler extends HandlerInterceptorAdapter {
                 redisUtils.set(key, seconds.toString(), seconds);
                 return true;
             } else {
-                throw new JdException("999", "请不要在" + seconds + "秒内重复请求");
+                throw new Exception("请不要在" + seconds + "秒内重复请求");
             }
         }
     }
