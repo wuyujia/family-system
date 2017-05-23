@@ -27,9 +27,6 @@
         <pagehelper.version>4.1.1</pagehelper.version>
         <fastjson.version>1.2.17</fastjson.version>
         <commons.io.version>2.4</commons.io.version>
-        <aliyun-sdk-oss.version>2.5.0</aliyun-sdk-oss.version>
-        <open-api-sdk.version>2.0</open-api-sdk.version>
-        <jackson-mapper-as.version>1.9.2</jackson-mapper-as.version>
         <swagger2-version>2.6.1</swagger2-version>
     </properties>
 
@@ -76,24 +73,6 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
-            </dependency>
-            <!--阿里云对象存储-->
-            <dependency>
-                <groupId>com.aliyun.oss</groupId>
-                <artifactId>aliyun-sdk-oss</artifactId>
-                <version>${aliyun-sdk-oss.version}</version>
-            </dependency>
-            <!--JD SDK2.0-->
-            <dependency>
-                <groupId>com.jd</groupId>
-                <artifactId>open-api-sdk</artifactId>
-                <version>${open-api-sdk.version}</version>
-            </dependency>
-            <!--JD 需要用到的Jackson-->
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-mapper-asl</artifactId>
-                <version>${jackson-mapper-as.version}</version>
             </dependency>
             <!--swagger2-->
             <dependency>
@@ -180,21 +159,6 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-        </dependency>
-        <!--阿里云对象存储-->
-        <dependency>
-            <groupId>com.aliyun.oss</groupId>
-            <artifactId>aliyun-sdk-oss</artifactId>
-        </dependency>
-        <!--JD SDK2.0-->
-        <dependency>
-            <groupId>com.jd</groupId>
-            <artifactId>open-api-sdk</artifactId>
-        </dependency>
-        <!--JD 需要用到的Jackson-->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
         </dependency>
         <!--swagger2-->
         <dependency>
