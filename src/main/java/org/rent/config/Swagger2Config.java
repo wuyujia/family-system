@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2Config {
 
-    @Bean
+//    @Bean
     public Docket restApiForBase() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
@@ -32,15 +32,15 @@ public class Swagger2Config {
                 .build();
     }
 
-//    @Bean
-    public Docket restApiForJd() {
+    @Bean
+    public Docket restApiForFamilyUser() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                .groupName("jd")
+                .groupName("user")
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                .paths(PathSelectors.ant("/jd/**"))
+                .paths(PathSelectors.ant("/user/**"))
                 .build();
     }
 
