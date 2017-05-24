@@ -40,7 +40,7 @@ public class Swagger2Config {
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                .paths(PathSelectors.ant("/user/**"))
+                .paths(PathSelectors.any())
                 .build();
     }
 
