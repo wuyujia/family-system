@@ -35,7 +35,7 @@ public class RecordController extends ExceptionHandlerController {
     @Autowired
     private RecordService recordService;
 
-    @RequestMapping("/list/recordList")
+    @RequestMapping("/list/recordDetailList")
     @ApiOperation(value = "查询所有的分账单记录", response = Map.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, httpMethod = "GET")
     public Map<String, List> getRecordList() {
         return null;
