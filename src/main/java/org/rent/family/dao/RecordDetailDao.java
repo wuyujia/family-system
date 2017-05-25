@@ -1,5 +1,6 @@
 package org.rent.family.dao;
 
+import org.rent.family.domain.RecordDetail;
 import org.rent.family.mapper.RecordDetailMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,5 +21,14 @@ public class RecordDetailDao {
      */
     public List findAllList(){
         return recordDetailMapper.findAllList();
+    }
+
+    /**
+     * 查询AA记录详情
+     * @param id
+     * @return
+     */
+    public List<RecordDetail> findRecordDetailListByRecordId(Integer id) {
+        return recordDetailMapper.findRecordDetailListByRecordId(id);
     }
 }

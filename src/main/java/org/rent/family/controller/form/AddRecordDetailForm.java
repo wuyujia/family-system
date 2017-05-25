@@ -1,5 +1,6 @@
 package org.rent.family.controller.form;
 
+import io.swagger.annotations.ApiParam;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;

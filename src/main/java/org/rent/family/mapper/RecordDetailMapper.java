@@ -2,7 +2,7 @@ package org.rent.family.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
+import org.rent.family.domain.RecordDetail;
 
 import java.util.List;
 
@@ -17,5 +17,13 @@ public interface RecordDetailMapper {
      * @return
      */
     @Select("SELECT * FROM record_detail WHERE status!=0")
-    public List findAllList();
+    List findAllList();
+
+    /**
+     * 查询AA记录详情
+     * @param id
+     * @return
+     */
+    @Select("SELECT * FROM record_detail WHERE record_id = #{id} AND status != 0")
+    List<RecordDetail> findRecordDetailListByRecordId(Integer id);
 }

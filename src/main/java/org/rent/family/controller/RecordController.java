@@ -1,7 +1,10 @@
 package org.rent.family.controller;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.StringUtils;
 import org.rent.annotation.Resubmit;
 import org.rent.base.ParamsValidHandler;
 import org.rent.base.ValidationUtils;
@@ -9,6 +12,7 @@ import org.rent.controller.ExceptionHandlerController;
 import org.rent.exception.ValidationException;
 import org.rent.family.controller.form.AddRecordDetailForm;
 import org.rent.family.service.RecordService;
+import org.rent.utils.ValidateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,8 +42,8 @@ public class RecordController extends ExceptionHandlerController {
 
     @RequestMapping("/list/recordDetailList")
     @ApiOperation(value = "查询所有的分账单记录", response = Map.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, httpMethod = "GET")
-    public Map<String, List> getRecordList() {
-        return null;
+    public Map<String,Object> getRecordList() {
+        return recordService.getRecordDetailList();
     }
 
     /**
@@ -52,4 +57,15 @@ public class RecordController extends ExceptionHandlerController {
         System.out.println(form);
         return null;
     }
+
+    @RequestMapping(value = "/findOne/record")
+    @ApiOperation(value = "AA账单详情", response = Map.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, httpMethod = "POST")
+    @ApiImplicitParam(value = "id", name = "AA账单详情的id", required = true, dataType = "Integer")
+    public Object findOneOfRecord(Integer id) {
+        if (ValidateUtils.ValidateParams(id)){
+            return ValidateUtils.EmptyParamsBackCode();
+        }
+        return recordService.findOneOfRecord(id);
+    }
+
 }
