@@ -68,4 +68,21 @@ public class RecordController extends ExceptionHandlerController {
         return recordService.findOneOfRecord(id);
     }
 
+    /**
+     * 发起AA
+     * @param recordIdList
+     * @return
+     */
+    @RequestMapping(value = "/launchAA")
+    @ApiOperation(value = "发起AA", response = Map.class, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, httpMethod = "POST")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "recordIdList", name = "分账单的Id列表", required = true, dataType = "Integer")
+    )
+    public Object launchAA(List recordIdList,String name) {
+        if (ValidateUtils.ValidateListIsEmpty(recordIdList)||ValidateUtils.ValidateParams(name)){
+            return ValidateUtils.EmptyParamsBackCode();
+        }
+        return null;
+    }
+
 }

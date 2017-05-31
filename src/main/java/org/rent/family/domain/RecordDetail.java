@@ -1,6 +1,7 @@
 package org.rent.family.domain;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Copyright © 2017北京联合倍全电子商务有限公司. All rights reserved.

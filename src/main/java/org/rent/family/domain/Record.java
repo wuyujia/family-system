@@ -1,5 +1,7 @@
 package org.rent.family.domain;
 
+import java.math.BigDecimal;
+
 /**
  * Copyright © 2017北京联合倍全电子商务有限公司. All rights reserved.
  *
@@ -23,9 +25,14 @@ public class Record {
     private String name;
 
     /**
+     * AA对账金额
+     */
+    private BigDecimal account;
+
+    /**
      * 添加时间
      */
-    private Integer addTime;
+    private Long addTime;
 
     /**
      * 添加时间字符串
@@ -48,11 +55,11 @@ public class Record {
         this.name = name;
     }
 
-    public Integer getAddTime() {
+    public Long getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Integer addTime) {
+    public void setAddTime(Long addTime) {
         this.addTime = addTime;
     }
 
@@ -64,11 +71,20 @@ public class Record {
         this.addTimeDesc = addTimeDesc;
     }
 
+    public BigDecimal getAccount() {
+        return account;
+    }
+
+    public void setAccount(BigDecimal account) {
+        this.account = account;
+    }
+
     @Override
     public String toString() {
         return "Record{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", account=" + account +
                 ", addTime=" + addTime +
                 ", addTimeDesc='" + addTimeDesc + '\'' +
                 '}';

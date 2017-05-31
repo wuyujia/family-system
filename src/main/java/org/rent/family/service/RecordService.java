@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -32,6 +33,8 @@ public class RecordService {
 
     @Autowired
     private RecordDao recordDao;
+
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
     public Object recordOneDetail(String name, String desc, BigDecimal money, String consumeTime) {
         // TODO: 2017/5/24 进行参数合法性校验
@@ -100,5 +103,33 @@ public class RecordService {
                 .append("record", record)
                 .append("recordList", recordList)
                 .fetchAll();
+    }
+
+    /**
+     * 发起AA
+     * @param recordIdList
+     * @return
+     */
+    public Object launchAA(List recordIdList,String name){
+        /**
+         * 1.查询生成AA账单的所有分账单
+         */
+        List<RecordDetail> recordList =  recordDao.findListByIdList(recordIdList);
+
+        /**
+         * 2.生成AA账单
+         */
+        Record record = new Record();
+        BigDecimal account = BigDecimal.ZERO;
+        if (ValidateUtils.ValidateListIsEmpty(recordList)){
+            for (RecordDetail recordDetail:recordList){
+                account = account.add(recordDetail.getMoney());
+            }
+        }
+        record.setAccount(account);
+        record.setAddTime(new Date().getTime());
+        record.setAddTimeDesc(simpleDateFormat.format(new Date()));
+        record.setName(name);
+        return null;
     }
 }
